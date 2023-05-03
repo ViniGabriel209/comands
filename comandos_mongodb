@@ -1,5 +1,5 @@
 . Entrar no site do MongoDB Atlas para conseguir acesso ao BdD na nuvem pelo VSCode
-Crtl + Shift para entrar no MongoDB Shell
+. Crtl + Shift para entrar no MongoDB Shell
 
 NoSQL      vs SQL
 
@@ -28,9 +28,6 @@ db.colecao.deleteMany({})                         # APAGA TODOS OS DOCUMENTOS DA
 db.colecao.updateOne({query}, {operator: {}})     # ATUALIZA OS DOCUMENTOS ESPECIFICADOS NA QUERY, updateOne() e updateMany()
                                                   # OPERATOR PODE SER: $set, $mul, $inc, $min, $max, $currentDate, $rename, $unset
 
-
-
-
 $eq         → Matches values that are equal to a specified value.
 $gt         → Matches values that are greater than a specified value.
 $gte        → Matches values that are greater than or equal to a specified value.
@@ -48,7 +45,8 @@ $elemMatch  → Select all documents which has a field that is an array and fulf
 $size       → Select all documents that has a field with an array with the length of the value given
 
 $push       → Add itens to an array
-$each       → Add multiple itens to an array, used along with $push
+$addToSet   → Add itens to an array if the item to be included doesn't already exists in the array
+$each       → Add multiple itens to an array, used along with $push or $addToSet
 $slice      → Cut the array accordind to the number especified
 $pop        → Exclude the first (-1) or the last (1) item of an array
-
+$pull       → Remove from an array all the items that meet an condition
