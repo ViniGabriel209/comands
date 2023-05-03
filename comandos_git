@@ -11,7 +11,7 @@ git merge nome_da_nova_branch          # realiza o merge na branch atual da outr
 git clone url_do_repositorio           # instala repositório do github
 
 git remote add origin <link do repositório no GitHub>    # conecta o git ao local no github
-git push -u origin main                # leva os arquivos ao GitHub
+git push -u origin nomeDaBranch (main) # leva os arquivos ao GitHub
 git branch -M main                     # importante por questões de nomenclatura de processos
 
 rm .git -fR                            # a pasta deixa de ser um repositório git
