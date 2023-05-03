@@ -28,6 +28,8 @@ db.colecao.deleteMany({})                         # APAGA TODOS OS DOCUMENTOS DA
 db.colecao.updateOne({query}, {operator: {}})     # ATUALIZA OS DOCUMENTOS ESPECIFICADOS NA QUERY, updateOne() e updateMany()
                                                   # OPERATOR PODE SER: $set, $mul, $inc, $min, $max, $currentDate, $rename, $unset
 
+$           → Operator used when it's necessary to find an element inside a field taht contains an array
+
 $eq         → Matches values that are equal to a specified value.
 $gt         → Matches values that are greater than a specified value.
 $gte        → Matches values that are greater than or equal to a specified value.
