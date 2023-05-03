@@ -1,0 +1,318 @@
+\documentclass[a4paper,12pt]{article} % ,twocolumn para duas colunas
+\usepackage[utf8]{inputenc} % Acentos
+\usepackage[lmargin=3cm,tmargin=3cm,rmargin=2cm,bmargin=2cm]{geometry} % Margens
+\usepackage[x]{setspace} % Espaçamento (singlespacing, onehalfspacing ou doublespacing)
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel} % Pacote em português
+\usepackage{graphicx,xcolor,comment,enumerate,multirow,multicol} 
+\usepackage{indentfirst} % Parágrafo na primeira linha 
+\usepackage{amsmath,amsthm,amsfonts,amssymb,dsfont,mathtools,blindtext}
+\usepackage{multicol} % Para botar o texto em colunas
+\usepackage{caption} % Para colocar legenda de autoria 
+
+\usepackage{times}  % Fonte times
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}  % Fonte arial
+
+\usepackage{lmodern} % Corrige o problema das letras estranhas
+\usepackage{mathptmx} % Outra alternativa para fonte, parece com times, testar no beamer
+% OUTRAS ALTERNATIVAS, RECOMENDO AS DE ARIAL OU TIMES
+
+\setlength{\parindent}{2cm} % Tamanho da indentação do parágrafo (2 cm por exemplo)
+\setlength{\parskip}{0.2cm} % Tamanho do espaço entre os parágrafos (0,2 cm por exemplo) (opcional)
+
+\title{}
+\author{}
+\date{}
+\pagestyle{empty} % RETIRAR A NUMERAÇÃO DAS PÁGINAS
+% -------------------------------------------------------
+% -------------------------------------------------------
+
+
+\begin{document}
+
+\begin{multicols}{x} % x É O NÚMERO DE COLUNAS PARA O TEXTO . USAR O PACOTE {multicol}
+TEXTO
+\end{multicols}
+% BOTAR multicols* PARA FAZER O TEXTO DESEQUILIBRADO, ANTES AS COLUNAS FICAVAM COM A MESMA PROFUNDIDADE   RECOMENDADO
+
+\begin{titlepage}
+	\maketitle
+	Outras coisas
+\end{titlepage}
+% CAPA
+
+\begin{abstract}
+\end{abstract}
+% RESUMO DO ARTIGO
+
+\begin{flushleft}
+\end{flushleft}
+
+\begin{flushright}
+\end{flushright}
+
+\begin{center}
+\end{center}
+% ALINHAMENTO DO TEXTO    OLHAR EM LaTeX
+
+\begin{quote}
+\end{quote}
+% USADO PARA FAZER CITAÇÕES
+
+\begin{quotation}
+\end{quotation}
+% USADO PARA CITAÇÕES COM PARÁGRAFO
+
+\begin{enumerate}
+\end{enumerate}
+% FAZ LISTA COM NÚMEROS (USAR \item) (PODE USAR ENUMERATE DENTRO DE OUTRO ENUMERATE) 
+
+\begin{itemize}
+\end{itemize}
+% FAZ LISTA COM PONTINHOS 
+
+\begin{equation}
+\end{equation}
+% FAZ UMA EQUAÇÃO CENTRALIZADA E NUMERADA. USAR \label{} e \ref{}
+
+\usepackage{lscape}
+\begin{landscape}
+\end{landscape}
+% SERÁ CRIADA UMA NOVA PÁGINA EM MODO PAISAGEM. ÚTIL PARA TABELAS MUITO GRANDES
+
+\hfill   % PÕE A MINIPAGE NA MARGEM DIREITA
+\begin{minipage}{xcm}
+\end{minipage}
+% PÕE O TEXTO COM A LARGURA DE x cm, INTERESSANTE PARA FAZER CITAÇÕES NA ABNT
+
+\parbox{width}{texto} 
+% FAZ UM TEXTO COM A LARGURA DEFINIDA, INTERESSANTE QUANDO SE DESEJA FAZER QUEBRA DE LINHA
+
+\textsuperscript{} / \textsubscript{}  % PARA COLOCAR TEXTO NO EXPOENTE OU NO ÍNDICE. ex n°
+\textrm{}  % PARA ESCREVER TEXTO EM AMBIENTE MATEMÁTICO
+
+\section{}
+% PARA FAZER SEÇÃO (PARA TIRAR NUMERAÇÃO BOTAR \section*{} )
+\appendix 
+% ANTES DA SEÇÃO PARA TORNAR APÊNCICE
+
+\\[x*cm]
+% PULAR LINHA *[OPCIONAL] 
+
+%%%%%%%%%%%%%%
+\newcommand{\PR}[1]{\ensuremath{\left[#1\right]}}
+\newcommand{\PC}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\chav}[1]{\ensuremath{\left\{#1\right\}}}
+
+\PC \PR \chav
+% Parênteses curvos, retos e chavetas já com o tamanho correto
+
+\tableofcontents
+% SUMÁRIO (COMPILAR TRÊS VEZES)
+\renewcommand{\contentsname}{Índice}
+% PARA MUDAR O NOME DO SUMÁRIO (Índice por exemplo)
+
+\setlength{\parindent}{2cm}
+% TAMANHO DA INDENTAÇÃO DO PARÁGRAFO (2 cm por exemplo)
+
+\newpage
+% NOVA PÁGINA
+
+\hspace{1cm} ou \vspace{1cm}
+% DÁ ESPAÇAMENTO ENTRE PALAVRAS OU LINHAS (1 cm por exemplo)
+
+\noindent
+% PARA TIRAR A INDENTAÇÃO DE PARÁGRAFO
+ 
+\newcommand{\comando}{O que quer fazer}
+% POR EXEMPLO ESCREVER UM SINÔNIMO PARA ALGO GRANDE USADO VÁRIAS VEZES
+
+\footnote{Nota}
+% PARA FAZER UMA NOTA DE RODAPÉ. SERÁ GERADO A NUMERAÇÃO AUTOMATICAMENTE
+% VER A APOSTILA INTERMEDIÁRIO PARA MAIS INFORMAÇÕES SOBRE RODAPÉ E CABEÇALHO
+
+\href{link}{x} 
+% PARA COLOCAR UM LINK, x=NOME QUE IRÁ APARECER NO TEXTO PARA CLICAR
+\textcolor{cor}{texto}
+% PARA MUDAR A COR DO TEXTO, INTERESSANTE EM LINKS O AZUL 
+
+% -------------------------------------------------------
+% -------------------------------------------------------
+\listoftables % PARA FAZER A LISTA DE TABELAS
+\begin{table}[!x]  % x=h PARA DEIXAR ONDE VOCÊ DESEJA  x=t NO TOPO  x=b NA BASE  ! PARA FORÇAR
+   \centering  % PARA CENTRALIZAR A TABELA
+   \caption{nome da tabela}  % PARA DAR NOME À TABELA
+   \begin{tabular}{l{}p{}c{}r{}}
+      \multicolumn{2}{c}{texto} & \multicolumn{2}{c}{texto} \\  % USADO PARA MESCLAR COLUNAS 
+      alguma coisa & alguma coisa & alguma coisa & alguma coisa \\
+      \hline % SE QUISER LINHA HORIZONTAL
+      outra coisa  & outra coisa  & \multicolumn{2}{c}{texto que preenche 2 colunas} \\ 
+      \cline{i-j} % PARA TRAÇAR LINHA HORIZONTAL DA COLUNA i À COLUNA j
+   \end{tabular}
+   % O NÚMERO DE LETRAS NO {} É O NÚMERO DE COLUNAS, BOTAR DENTRO DE {xcm} O TAMANHO DA COLUNA 
+   % l- ALINHADO À ESQUERDA  c- ALINHADO NO CENTRO r- ALINHADO À DIREITA
+   % SEPARAR CADA COLUNA COLOCANDO &, E NO FINAL \\ PARA IR PARA A OUTRA LINHA
+   % BOTAR NAS LETRAS DAS COLUNAS BARRAS VERTICAIS (|) PARA LINHAS VERTICAIS NA TABELA
+   \caption*{escrever a fonte}  % PARA DAR AUTORIA À TABELA
+   \label{nome para referência} % DEPOIS \ref{nome para referência} PARA MOSTRAR NO TEXTO
+\end{table}
+\usepackage{booktabs} 
+\addlinespace[xpt] % DENTRO DO TABULAR PARA ADICIONAR ESPAÇO ENTRE AS LINHAS. USAR O PACOTE
+\toprule  \midrule  \bottomrule
+% PARA A LINHA DE CIMA, ALGUMA DO MEIO E A DE BAIXO. FICA MAIS BONITO
+\cmidrule{i-j} % PARA SUBSTITUIR \cline{i-j}
+% -------------------------------------------------------
+% -------------------------------------------------------
+
+
+% -------------------------------------------------------
+% -------------------------------------------------------
+\listoffigures % PARA FAZER LISTA DE FIGURAS
+\begin{figure}[!x]  % x=h PARA DEIXAR ONDE VOCÊ DESEJA  x=t NO TOPO  x=b NA BASE  ! PARA FORÇAR
+   \centering % PARA CENTRALIZAR A FIGURA
+   \caption{nome da figura a ser dado} % PARA DAR NOME À FIGURA
+   \includegraphics[scale=•,angle=]{NOME DA PASTA/NOME DA FIGURA NA PASTA JUNTO DO ARQUIVO DO TEXTO}
+   \caption*{escrever a fonte}  % PARA DAR AUTORIA À FIGURA
+   \label{nome para referência} % DEPOIS \ref{nome para referência} PARA MOSTRAR NO TEXTO
+\end{figure}
+% -------------------------------------------------------
+% -------------------------------------------------------
+
+
+\cite{apelido} % EM ALGUM LUGAR DO TEXTO
+\bibliographystyle{x} % USAR ieeetr
+\usepackage[alf]{abntex2cite} % FAZ AS CITAÇÕES NA ABNT (NOME,DATA), ALTERNATIVA AO COMANDO ANTERIOR
+\addcontentsline{toc}{section}{nome no índice} % OPCIONAL PARA BOTAR NO SUMÁRIO
+\bibliography{nomedoarquivo.bib} % CRIAR OUTRO ARQUIVO COM AS REFERENCIAS, NO FINAL .bib
+% IR EM Ferramentas / BibTex PARA COMPILAR. COMPILAR MAIS VEZES
+
+% COMO FAZER A REFERÊNCIA NO ARQUIVO .bib NA MESMA PASTA DO ARQUIVO PRINCIPAL
+% NO GOOGLE SCHOLAR, QUANDO UTILIZAR REFERÊNCIA DE ALGUM ARTIGO, NA SUA ABA ANTES DE ENTRAR NO SITE HAVERÁ ASPAS, CLIQUE NELA E VAI APARECER BibTex. COPIE, COLE E SEJA FELIZ
+@BOOK{Apelido, 
+author={N1. Sobrenome1 and N2. Sobrenome2},
+title={Nome do Livro},
+publisher={Editora},
+edition={ \textsuperscript{o}},
+address={},
+year={ano},
+volume={volume}
+}
+@article{Apelido,
+author={N. Sobrenome1 and N. Sobrenome2},
+title={Nome do artigo},
+journal={Nome do peri\'odico},
+year={ano},
+volume={volume},
+number={n\'umero},
+pages={PaginaInicial-PaginaFinal},
+}
+@inproceedings{Apelido,
+author={N. Sobrenome1 and N. Sobrenome2},
+title={Nome do artigo},
+booktitle={Nome dos anais do congresso},
+year={ano},
+pages={PaginaInicial-PaginaFinal},
+address={cidade, pa\'is},
+}
+@misc{Apelido,
+Author={Lauro C{\'e}sar Araujo},
+Date-Added={2013-03-23 21:39:21 +0000},
+Date-Modified={2015-04-27 22:43:06 +0000},
+Howpublished={Wiki do abnTeX2},
+Keywords={wiki},Title={Como customizar o abnTeX2},
+Url={https://github.com/abntex/abntex2/wiki/ComoCustomizar},
+Urlaccessdate={27 abr 2015},
+Year={2015},
+Bdsk-Url-1={https://github.com/abntex/abntex2/wiki/ComoCustomizar}
+}
+
+% TAMANHOS DAS FONTES
+                    10pt    11pt    12pt
+\tiny               5       6       6
+\scriptsize         7       8       8
+\footnotesize       8       9       10
+\small              9       10      10.95
+\normalsize         10      10.95   12
+\large              12      12      14.4
+\Large              14.4    14.4    17.28
+\LARGE              17.28   17.28   20.74
+\huge               20.74   20.74   24.88
+\Huge               24.88   24.88   24.88
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% APRESENTAÇÃO COM BEAMER %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[x]{beamer} % x=aspectratio=169 (OPCIONAL) PARA ELIMINAR AS BARRAS PRETAS NA LATERAL
+\usepackage[utf8]{inputenc} % Acentos
+\usetheme{} % ESCOLHER O TEMA DA APRESENTAÇÃO (OPCIONAL) PROCURAR EM Assistentes -> QB Presentation
+
+\title{}
+\subtitle{}
+\author{}       % USAR \and OU \\ PARA MAIS AUTORES (TESTAR)
+\institute{}
+\date{}         % DEIXAR VAZIO PARA FICAR SEM DATA, USAR TAMBÉM PARA COLOCAR O LUGAR ex: lugar, ano
+% INFORMAÇÕES RELEVANTES PARA COLOCAR NO PRIMEIRO QUADRO
+% [VERSÃO CURTA] ANTES DO {} PARA CORTE NO RODAPÉ
+
+\logo{\includegraphics[scale=•]{NOME DA PASTA/NOME DA IMAGEM}} 
+% PARA COLOCAR UMA IMAGEM QUE APARECERÁ EM TODOS OS QUADROS (TESTAR PQ PODE FICAR ESTRANHO)(OPCIONAL)
+
+\begin{document}
+
+\begin{frame}
+\frametitle{Título}          % TÍTULO DE CADA QUADRO (OPCIONAL)  FICA NO TOPO
+\framesubtitle{Subtítulo}    % SUBTÍTULO DE CADA SLIDE     
+% CONTEÚDO
+\end{frame}
+% CADA QUADRO SE DÁ DENTRO DESTE AMBIENTE, UM QUADRO PODE TER MAIS DE UM SLIDE 
+
+\titlepage  
+% PARA COLOCAR NO PRIMEIRO SLIDE, DENTRO DE UM FRAME
+
+\alert{texto em destaque}  
+% DESTACA O TEXTO, PÕE EM VERMELHO POR EXEMPLO
+
+\pause
+% LOGO APÓS ALGUM COMANDO DENTRO DO FRAME (MOTIVOS ÓBVIOS)
+
+\setbeamercover{transparent} % NO PREÂMBULO
+\uncover<x-y>{Texto} % CRIA VÁRIOS SLIDES DENTRO DE UM QUADRO, CADA "ITEM" FICARÁ DESTACADO E OS OUTROS TRANSPARENTES, ELE APARECE DO SLIDE x AO y(-y OPCIONAL), <x-> APARECE ATÉ O FINAL
+% PROCURAR POR \visible E \only (NÃO USO)  % PARECIDO COM O \pause
+
+% NOS AMBIENTES A SEGUIR APARECERÃO <x-y> COM A MESMA LÓGICA DO \uncover (TODOS OPCIONAIS)
+
+\begin{block}<x-y>{x} %x={O TÍTULO DO BLOCO}, OU {} OU {\ } OS DOIS ÚLTIMOS PRODUZEM EFEITOS DIFERENTES 
+Texto 
+\end{block}
+% COMEÇA UM BLOCO DE TEXTO, DENTRO DE UMA CAIXINHA, COM OU SEM TÍTULO (DEPENDE DO {})
+
+\begin{itemize}
+\item<x-y | ação@w-z> Texto  % ITEM APARECERÁ NOS SLIDES x-y (COMO \uncover)
+% ação=(alert, uncover, visible, only) AÇÃO ACONTECE NOS SLIDES w-z	
+\end{itemize}
+% FAZ LISTA COM PONTOS (TÓPICOS DO QUADRO)
+
+\section[x]{}         % COLOCAR ANTES DO FRAME, x=título curto (OPCIONAL)
+\subsection[]{}       % VALE O MESMO, OUTRAS subsubsections SÃO POSSÍVEIS
+
+\tableofcontents[x]   % SUMÁRIO APÓS PRIMEIRO QUADRO, DENTRO DE UM FRAME, COLOCAR TÍTULO (SUMÁRIO)
+                      % x=pausesections, pausesubsections PARA APRESENTAR PAUSADAMENTE AS SEÇÕES
+
+\AtBeginSection[]{
+	\begin{frame}
+	\tableofcontents[currentsection, hideothersubsections]
+	\end{frame}
+}
+% ANTES DO INÍCIO DE CADA SEÇÃO SERÁ MOSTRADA NOVAMENTE O SUMÁRIO COM A RESPECTIVA SEÇÃO DESTACADA
+% ÚTIL PARA GRANDES APRESENTAÇÕES
+% POSSÍVEL FAZER COM SUBSEÇÕES (AtBeginSubsection, currentsubsection) 
+
+% REFERÊNCIAS PODEM SER FEITAS DA MESMA FORMA (ARTIGO) DENTRO DE UM FRAME 
+% PROCURAR POR allowframebreaks PARA REFERÊNCIAS EM DOIS QUADROS
+
+\end{document}
