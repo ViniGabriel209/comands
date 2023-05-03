@@ -8,6 +8,7 @@ git checkout -b nome_da_nova_branch    # cria nova branch
 git branch                             # mostra qual branch está
 git checkout main                      # volta à branch main para realizar merge
 git merge nome_da_nova_branch          # realiza o merge na branch atual da outra branch
+git clone url_do_repositorio           # instala repositório do github
 
 git remote add origin <link do repositório no GitHub>    # conecta o git ao local no github
 git push -u origin main                # leva os arquivos ao GitHub
