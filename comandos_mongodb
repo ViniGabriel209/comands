@@ -16,7 +16,7 @@ db.colecao.insertMany([{...}, {...}])             # INSERE VÁRIOS VALORES DE JS
 db.createCollection( "nomeDaColecao", { collation: { locale: "pt" } } ); 
                                                   # CRIA COLATION EXPLICITAMENTE COM ALGUMAS CONFIGURAÇÕES
                                           
-db.Colecao.find({query}, {projection})            # PRINTA OS DADOS DA COLEÇÃO
+db.colecao.find({query}, {projection})            # PRINTA OS DADOS DA COLEÇÃO
                                                   # query SIGNIFICA A CONDIÇÃO DE BUSCA E projection OS ATRIBUTOS RETORNADOS (1 TRUE E 0 FALSE)
                                                   # É OPCIONAL COLOCAR .limit(n) PARA LISTAR OS n PRIMEIROS ITENS DA QUERY 
                                                   # TAMBÉM O .pretty() E O .skip(m) PARA PULAR OS m PRIMEIROS ITENS
