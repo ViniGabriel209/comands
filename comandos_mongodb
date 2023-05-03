@@ -1,0 +1,54 @@
+. Entrar no site do MongoDB Atlas para conseguir acesso ao BdD na nuvem pelo VSCode
+Crtl + Shift para entrar no MongoDB Shell
+
+NoSQL      vs SQL
+
+DOCUMENTOS →  LINHAS OU REGISTROS DE TABELAS
+COLEÇÕES   →  TABELAS
+  
+use('nomeDoBanco')                                # INICIA OS SCRIPTS PARA A BD DESEJADA
+
+db.colecao.insertOne({ x: 1 })                    # CRIA coleção 'nomeDaColecao' (caso ñ exista) e insere dado em forma de JSON
+                                                  # É AUTOMATICAMENTE CRIADO objectId, PARA SETAR CHAVE ID É '_id: valor' DENTRO DO JSON
+                                             
+db.colecao.insertMany([{...}, {...}])             # INSERE VÁRIOS VALORES DE JSON NA COLEÇÃO
+
+db.createCollection( "nomeDaColecao", { collation: { locale: "pt" } } ); 
+                                                  # CRIA COLATION EXPLICITAMENTE COM ALGUMAS CONFIGURAÇÕES
+                                          
+db.Colecao.find({query}, {projection})            # PRINTA OS DADOS DA COLEÇÃO
+                                                  # query SIGNIFICA A CONDIÇÃO DE BUSCA E projection OS ATRIBUTOS RETORNADOS (1 TRUE E 0 FALSE)
+                                                  # É OPCIONAL COLOCAR .limit(n) PARA LISTAR OS n PRIMEIROS ITENS DA QUERY 
+                                                  # TAMBÉM O .pretty() E O .skip(m) PARA PULAR OS m PRIMEIROS ITENS
+
+db.colecao.countDocuments({})                     # RETORNA A QUANTIDADE DE DOCUMENTOS EM UMA COLEÇÃO
+
+db.colecao.deleteMany({})                         # APAGA TODOS OS DOCUMENTOS DA COLEÇÃO
+
+db.colecao.updateOne({query}, {operator: {}})     # ATUALIZA OS DOCUMENTOS ESPECIFICADOS NA QUERY, updateOne() e updateMany()
+                                                  # OPERATOR PODE SER: $set, $mul, $inc, $min, $max, $currentDate, $rename, $unset
+
+
+
+
+$eq         → Matches values that are equal to a specified value.
+$gt         → Matches values that are greater than a specified value.
+$gte        → Matches values that are greater than or equal to a specified value.
+$in         → Matches any of the values specified in an array.
+$lt         → Matches values that are less than a specified value.
+$lte        → Matches values that are less than or equal to a specified value.
+$ne         → Matches all values that are not equal to a specified value.
+$nin        → Matches none of the values specified in an array.
+$not        → Matches the opposite of the statement
+$nor        → Matches values those doesnt respect any of the given expressions
+$exists     → Check if the attribute exists in the document
+
+$all        → Select all documents which has a field with all the elements given
+$elemMatch  → Select all documents which has a field that is an array and fulfill all the criteria
+$size       → Select all documents that has a field with an array with the length of the value given
+
+$push       → Add itens to an array
+$each       → Add multiple itens to an array, used along with $push
+$slice      → Cut the array accordind to the number especified
+$pop        → Exclude the first (-1) or the last (1) item of an array
+

@@ -1,0 +1,86 @@
+mysql -h localhost -u root -p   # ENTRA NO MYSQL PELO TERMINAL
+
+create database nome_do_banco;  # SEMPRE COM ; APÓS COMANDOS
+
+drop algo nome_de_algo          # APAGA ALGO, COMO DATABASE OU TABLE
+
+use nome_do_banco;              # ANTES DE OUTRO COMANDO PARA USAR TAL BANCO, SUBSTITUÍVEL POR CLICAR NO BANCO PELA INTERFACE
+
+create table nome_da_tabela(    # CRIA UMA TABELA DE DADOS NO BANCO
+
+dado1 tipo chave_primária,      # VÍRGULA APÓS O DADO
+dado2 tipo chave_primária,      # SEM VÍGULA NO ÚLTIMO
+foreign key (tabela) references database(tabela)                 # CRIA CHAVE ESTRANGEIRA
+CHECK ()                        # ADICIONA UMA RESTRIÇÃO NO VALOR DE ALGUM DADO
+);
+
+tipos:
+       varchar(n)        →  cria uma string com no máximo n caractéres
+       int               →  cria um inteiro
+       enum('x', 'y')    →  limita o dado a x ou y
+       decimal(n,m)      →  cria um número decimal com n número e m depois da vírgula
+       date              →  dado de data, assim o tempo é atualizado (AAAA-MM-DD)
+
+chave_primária:
+       not null          →  impede dado vazio
+       default 'valor'   →  dá o 'valor' como padrão caso não seja preenchido
+       auto_increment    →  preenche o valor do dado automaticamente
+       unique            →  impede outros dados com mesmo valor
+
+insert into nome_da_tabela
+(dado1, dado2)                  # COMANDO DESNECESSÁRIO CASO OS DADOS SEJAM DADOS NA ORDEM, ASSIM PODE SER 1 LINHA
+values 
+('valor1', 'valor2');           # INSERE DADOS NA TABELA, PODE SER COLOCADO VÍRGULA PARA SEREM ADICIONADOS OUTRA LINHA DE DADOS,
+                                  VALOR PODE SER DEFAULT
+
+select * from nome_da_tabela;   # MOSTRA AS LINHAS DE VALORES DA TABELA  
+describe nome_da_tabela         # MOSTRA OS DADOS DA TABELA
+
+alter table nome_da_tabela      # COMANDO PARA ALTERAR TABELA
+add column dado tipo chave_p;   # ADICIONA COLUNA NA TABELA
+drop column dado;               # APAGA COLUNA
+add column dado tipo after dado;# ADICIONA COLUNA DEPOIS DE OUTRA COLUNA. PODE SER USADO 'FIRST' PARA ADICIONAR COMO 1° COLUNA
+modify column dado tipo;        # ALTERA O TIPO DA COLUNA E CHAVES
+rename to novo_nome             # ALTERA O NOME DA TABELA
+
+update nome_da_tabela           # MODIFICA LINHA DA TABELA
+set dado = 'valor_modificado'   # MUDA O VALOR DO DADO, É POSSÍVEL MUDAR MAIS DE UM DADO DA LINHA SEPARANDO POR VÍRGULA 
+where outrodado = 'outrovalor'; # ESCOLHE A LINHA QUE O VALOR SERÁ MUDADO, PODE-SE USAR 'limit = 1' PARA LIMITAR PARA UMA LINHA MODIFICADA
+
+delete from nome_da_tabela      # DELETAR LINHA
+where dado = 'valor';           # ESCOLHE A LINHA A SER DELETADA, TAMBÉM É POSSÍVEL USAR 'limit'
+
+truncate table nome_da_tabela;  # DELETA TODAS AS LINHAS DA TABELA
+
+alter table nome_da_tabela
+add foreign key (dado)
+references nome_da_tabela(dado_da_tabela);      # ADICIONA CHAVE ESTRANGEIRA À TABELA
+
+alter table nome_da_tabela drop primary/foreign key nome_da_coluna       # REMOVE A CHAVE DA TABELA
+
+
+####  MORE ADVANCED COMMANDS
+
+
+SELECT   (in addition to attributes, this could be also functions, such as AVG(attribute)) → it will return a value
+
+	"LOOK FOR NESTED QUERIES FOR MORE ADVANCED INFORMATION"
+
+     	FROM ------ Table specification                                                  # obligatory
+	WHERE ----- → Attribute operator Attribute2 (operator is <, >, =, <=, <>, etc. combined with AND, OR, NOT, etc.)          
+	GROUP BY -- Grouping column (return the value specified for the group selected)
+	HAVING ---- Grouping column specification, the others columns won't be used      # used only if GROUP BY is used first
+	ORDER BY -- Sort of specification                                                # optional, always the last
+	
+SELECT E.attribute1, oE.otherAttribute FROM entity E                       # see join clauses, as well as outer join clauses
+JOIN otherEntity oE 
+ON E.id = oE.fk;                                                           # join tables from different entities according to a condition
+
+DISTINCT      →  used in SELECT, also inside funcs, clauses to show only different values without repetition (SELECT DISTINCT something...)
+EXISTS        →  used for nested queries when it's requested select values resulted from a subquery (try NOT EXISTS) (see difference with IN)
+ANY           →  used when you need select values with respect to a comparison (=, <>, !=, >, >=, <, or <=) with other values in an inner query
+
+Aggregate functions: AVG(), COUNT(), FIRST(), LAST(), MAX(), MIN(), SUM()
+Scalar functions: UCASE(), LCASE(), MID(), LEN(), ROUND(), NOW(), FORMAT()
+
+

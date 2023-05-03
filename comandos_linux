@@ -1,0 +1,11 @@
+nano arquivo                      →  cria e edita arquivo de texto
+cat arquivo                       →  mostra o arquivo de texto
+mv arquivo arquivo2               →  recorta, apaga arquivo e cria arquivo2
+cp arquivo arquivo2               →  copia arquivo e cria arquivo2 igual
+rm arquivo                        →  apaga arquivo
+rm -r pasta                       →  apaga pasta e tudo que tem dentro
+ssh -X -p 1214 login@161.24.17.YY →  entra no VASP (YY depende da máquina)
+mpirun -np C vasp                 →  fazer o cálculo (C é número de cores)
+zip -r arquivo.zip pastaazipar/   →  zipa a pastaazipar e cria o arquivo.zip
+scp -P 1214 -r vinicius2@161.24.17.49:~/CsSnI3/40bandas/EIGENVAL /home/vinicius/  →  exemplo de como importar um arquivo da máquina
+scp -P 2222 /home/vinicius/arquivo vinigab@161.24.17.185:~/pasta/                 →  exemplo de como importar um arquivo para a máquina

@@ -1,0 +1,16 @@
+git --version                          # checa a versão do git e se ele tá instalado
+git init                               # inicia repositório vazio na pasta do projeto
+git log                                # mostra os commits realizados
+git add filename                       # deixa o arquivo pronto pro commit 
+git status                             # mostra atualizações a serem commitadas
+git commit -m 'comment'                # faz o commit com mensagem         
+git checkout -b nome_da_nova_branch    # cria nova branch
+git branch                             # mostra qual branch está
+git checkout main                      # volta à branch main para realizar merge
+git merge nome_da_nova_branch          # realiza o merge na branch atual da outra branch
+
+git remote add origin <link do repositório no GitHub>    # conecta o git ao local no github
+git push -u origin main                # leva os arquivos ao GitHub
+git branch -M main                     # importante por questões de nomenclatura de processos
+
+rm .git -fR                            # a pasta deixa de ser um repositório git

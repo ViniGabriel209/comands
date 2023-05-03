@@ -1,0 +1,6 @@
+cp /usr/local/potcar/potpaw/PBE/Si/POTCAR ./POTCAR.Si →  Exemplo e caminho para o POTCAR
+
+cat POTCAR.Ca POTCAR.S                                →  Exemplo para juntar POTCARs
+
+gen_kpoints.py W G X W L G -l fcc -n 15               →  Gera 15 KPOINTS para fcc
+
