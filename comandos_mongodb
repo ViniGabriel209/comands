@@ -1,5 +1,6 @@
-. Entrar no site do MongoDB Atlas para conseguir acesso ao BdD na nuvem pelo VSCode
-. Crtl + Shift para entrar no MongoDB Shell
+. Entrar no site do MongoDB Atlas para conseguir acesso ao BdD na nuvem pelo VSCode 
+(Ctrl + Shift + P: mongodb+srv://ViniGabriel209:Vini2018@cluster0.gbbfvoy.mongodb.net/)
+. Crtl + Shift + P para entrar no MongoDB Shell
 
 NoSQL      vs SQL
 
